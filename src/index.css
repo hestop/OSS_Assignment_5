@@ -85,25 +85,25 @@
 }
 
 .btn-delete {
-  background-color: transparent;
-  color: #b21f2d;
-  border: 2px solid #b21f2d;
+  background-color: transparent !important;
+  color: #b21f2d !important;
+  border: 2px solid #b21f2d !important;
 }
 
 .btn-delete:hover {
-  background-color: #b21f2d;
-  color: white;
+  background-color: #b21f2d !important;
+  color: white !important;
 }
 
 .btn-edit {
-  background-color: transparent;
-  color: #004085;
-  border: 2px solid #004085;
+  background-color: transparent !important;
+  color: #004085 !important;
+  border: 2px solid #004085 !important;
 }
 
 .btn-edit:hover {
-  background-color: #004085;
-  color: white;
+  background-color: #004085 !important;
+  color: white !important;
 }
 
 .edit-modal,
