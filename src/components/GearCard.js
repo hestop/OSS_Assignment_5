@@ -1,6 +1,5 @@
 import React from 'react';
-import './css/GearCard.css';
-import '../index.css';
+import "../index.css";
 
 function GearCard({ gear, onDeleteGear, onEditGear }) {
   const handleDelete = () => {

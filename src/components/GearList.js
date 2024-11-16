@@ -1,5 +1,6 @@
 import React from 'react';
 import GearCard from './GearCard.js';
+import "../index.css";
 
 function GearList({ gearData, onDeleteGear, onEditGear }) {
   return (

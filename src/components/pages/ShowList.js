@@ -4,6 +4,8 @@ import EditModal from '../EditModal.js';
 import AddModal from '../AddModal.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import "../../index.css";
+
 
 function ShowList() {
   const [gearData, setGearData] = useState([]);
