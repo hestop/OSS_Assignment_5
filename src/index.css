@@ -1,12 +1,8 @@
-/* src/index.css */
-
-/* 공통 스타일 */
-body {
+.body {
   font-family: 'Roboto', sans-serif;
   background-color: rgb(243, 243, 245);
 }
 
-/* 카드 이미지 스타일 */
 .card-img-top {
   height: 280px;
   object-fit: contain;
@@ -25,13 +21,11 @@ body {
   padding-right: 15px;
 }
 
-/* 배너 및 레이아웃 스타일 */
 .top-mar {
   height: 525px;
 }
 
 .top-banner {
-  margin-top: 20px;
   position: relative;
   color: white;
   text-align: center;
@@ -68,8 +62,6 @@ body {
   background: none;
   color: white;
 }
-
-/* 푸터 스타일 */
 .foot {
   position: relative;
   height: 900px;
@@ -80,13 +72,9 @@ body {
   color: white;
   padding: 10px;
 }
-
-/* 네비게이션 바 */
 .navbar {
   margin-bottom: 20px;
 }
-
-/* 버튼 스타일 */
 .btn-custom {
   background-color: navy;
   color: white;
@@ -118,10 +106,9 @@ body {
   color: white;
 }
 
-/* 모달 스타일 */
 .edit-modal,
 .add-modal {
-  display: none; /* React에서 조건부 렌더링으로 제어하므로 기본적으로는 숨김 */
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -137,7 +124,7 @@ body {
 
 .modal-overlay,
 .modal-overlay-add {
-  display: none; /* React에서 조건부 렌더링으로 제어하므로 기본적으로는 숨김 */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -147,7 +134,6 @@ body {
   z-index: 999;
 }
 
-/* 폼 컨테이너 */
 .form-container {
   background-color: white;
   padding: 35px;
@@ -167,7 +153,6 @@ body {
   width: 110px;
 }
 
-/* 폼 검증 스타일 */
 .is-valid {
   border-color: green;
   outline: 1.7px solid green;
