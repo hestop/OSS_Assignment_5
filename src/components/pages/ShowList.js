@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import GearList from '../GearList';
-import EditModal from '../EditModal';
-import AddModal from '../AddModal';
+import GearList from '../GearList.js';
+import EditModal from '../EditModal.js';
+import AddModal from '../AddModal.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../../index.css';

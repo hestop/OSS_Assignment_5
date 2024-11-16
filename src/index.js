@@ -1,8 +1,7 @@
-// src/index.js
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import ShowList from "./components/pages/ShowList";
+import ShowList from "./components/pages/ShowList.js";
 
 const myComponent = <ShowList />;
 const root = ReactDOM.createRoot(document.getElementById("root"));

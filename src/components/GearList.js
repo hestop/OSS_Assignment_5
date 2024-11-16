@@ -1,5 +1,5 @@
 import React from 'react';
-import GearCard from './GearCard';
+import GearCard from './GearCard.js';
 
 function GearList({ gearData, onDeleteGear, onEditGear }) {
   return (
