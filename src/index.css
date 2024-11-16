@@ -154,15 +154,20 @@
 }
 
 .is-valid {
-  border-color: green;
-  outline: 1.7px solid green;
+  border-color: green !important;
+  outline: 1.7px solid green !important;
 }
 
 .is-invalid {
-  border-color: red;
-  outline: 1.7px solid red;
+  border-color: red !important;
+  outline: 1.7px solid red !important;
 }
 
 .is-invalid::placeholder {
-  color: red;
+  color: red !important;
+}
+
+.modal-btn {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
 }
