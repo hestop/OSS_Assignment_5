@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 function EditModal({ gear, onClose, onSave }) {
   const [formData, setFormData] = useState({
@@ -32,7 +32,7 @@ function EditModal({ gear, onClose, onSave }) {
     setFormData({ ...formData, [name]: value });
   };
 
-  const validateForm = () => {
+  const validateForm = useCallback(() => {
     let isValid = true;
     const newValidationState = {};
 
@@ -47,11 +47,11 @@ function EditModal({ gear, onClose, onSave }) {
 
     setValidationState(newValidationState);
     return isValid;
-  };
+  }, [formData]);
 
   useEffect(() => {
     validateForm();
-  }, []);
+  }, [validateForm]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -76,62 +76,82 @@ function EditModal({ gear, onClose, onSave }) {
     <div className="modal-overlay" style={{ display: 'block' }}>
       <div className="edit-modal" style={{ display: 'block' }}>
         <h2 className="text-center mb-4">Edit Gear Information</h2>
-        <form onSubmit={handleSubmit} id="editForm">
+        <form onSubmit={handleSubmit} id="editForm" noValidate>
           <div className="mb-3">
             <label className="form-label">Item Name</label>
             <input
               type="text"
-              className={`form-control ${validationState.name === 'valid' ? 'is-valid' : validationState.name === 'invalid' ? 'is-invalid' : ''}`}
+              className={`form-control ${
+                validationState.name === 'valid' ? 'is-valid' :
+                validationState.name === 'invalid' ? 'is-invalid' : ''
+              }`}
               name="name"
               value={formData.name}
               onChange={handleChange}
               required
             />
           </div>
+
           <div className="mb-3">
             <label className="form-label">Category</label>
             <input
               type="text"
-              className={`form-control ${validationState.category === 'valid' ? 'is-valid' : validationState.category === 'invalid' ? 'is-invalid' : ''}`}
+              className={`form-control ${
+                validationState.category === 'valid' ? 'is-valid' :
+                validationState.category === 'invalid' ? 'is-invalid' : ''
+              }`}
               name="category"
               value={formData.category}
               onChange={handleChange}
               required
             />
           </div>
+
           <div className="mb-3">
             <label className="form-label">Weight (g)</label>
             <input
               type="number"
-              className={`form-control ${validationState.weight === 'valid' ? 'is-valid' : validationState.weight === 'invalid' ? 'is-invalid' : ''}`}
+              className={`form-control ${
+                validationState.weight === 'valid' ? 'is-valid' :
+                validationState.weight === 'invalid' ? 'is-invalid' : ''
+              }`}
               name="weight"
               value={formData.weight}
               onChange={handleChange}
               required
             />
           </div>
+
           <div className="mb-3">
             <label className="form-label">Material</label>
             <input
               type="text"
-              className={`form-control ${validationState.material === 'valid' ? 'is-valid' : validationState.material === 'invalid' ? 'is-invalid' : ''}`}
+              className={`form-control ${
+                validationState.material === 'valid' ? 'is-valid' :
+                validationState.material === 'invalid' ? 'is-invalid' : ''
+              }`}
               name="material"
               value={formData.material}
               onChange={handleChange}
               required
             />
           </div>
+
           <div className="mb-3">
             <label className="form-label">Price ($)</label>
             <input
               type="number"
-              className={`form-control ${validationState.price === 'valid' ? 'is-valid' : validationState.price === 'invalid' ? 'is-invalid' : ''}`}
+              className={`form-control ${
+                validationState.price === 'valid' ? 'is-valid' :
+                validationState.price === 'invalid' ? 'is-invalid' : ''
+              }`}
               name="price"
               value={formData.price}
               onChange={handleChange}
               required
             />
           </div>
+
           <div className="mb-3">
             <label className="form-label">Feature</label>
             <input
@@ -142,6 +162,7 @@ function EditModal({ gear, onClose, onSave }) {
               onChange={handleChange}
             />
           </div>
+
           <div className="text-center">
             <button type="submit" className="btn btn-primary modal-btn">
               Save
